@@ -1,5 +1,6 @@
-torch==1.9.0
-torchvision==0.10.0
+torch==1.9.1
+torchvision==0.10.1
+# 3070,cuda11.2 requires
 pytorch-lightning==0.7.5
 test-tube
 kornia==0.2.0
