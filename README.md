@@ -129,7 +129,7 @@ python train.py \
    --root_dir test2 \
    --N_importance 64 --img_wh 800 800 \
    --num_epochs 30 --batch_size 2048 \
-   --optimizer adam --lr 5e-4 \
+   --optimizer adam --lr 10e-4 \
    --lr_scheduler steplr --decay_step 10 20 --decay_gamma 0.5 \
    --exp_name exp \
    --spheric
