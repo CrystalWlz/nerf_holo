@@ -1,4 +1,5 @@
-# nerf_holo
+# NeRF_Holo
+* NeRF+Hololens
 
 ## Software
 
@@ -74,6 +75,50 @@ You can monitor the training process by `tensorboard --logdir logs/` and go to `
 
    
 1. Install [COLMAP](https://github.com/colmap/colmap) following [installation guide](https://colmap.github.io/install.html)
+```
+conda create -n colmap
+conda activate colmap
+sudo apt-get install \
+    git \
+    cmake \
+    ninja-build \
+    build-essential \
+    libboost-program-options-dev \
+    libboost-filesystem-dev \
+    libboost-graph-dev \
+    libboost-system-dev \
+    libboost-test-dev \
+    libeigen3-dev \
+    libflann-dev \
+    libfreeimage-dev \
+    libmetis-dev \
+    libgoogle-glog-dev \
+    libgflags-dev \
+    libsqlite3-dev \
+    libglew-dev \
+    qtbase5-dev \
+    libqt5opengl5-dev \
+    libcgal-dev \
+    libceres-dev
+```
+Under Ubuntu 22.04, there is a problem when compiling with Ubuntu’s default CUDA package and GCC, and you must compile against GCC 10:
+```
+sudo apt-get install gcc-10 g++-10
+export CC=/usr/bin/gcc-10
+export CXX=/usr/bin/g++-10
+export CUDAHOSTCXX=/usr/bin/g++-10
+```
+add `set(CMAKE_CUDA_ARCHITECTURES 70)` in the CMakeLists.txt file
+```
+git clone https://github.com/colmap/colmap.git
+cd colmap
+git checkout dev
+mkdir build
+cd build
+cmake .. -GNinja
+ninja
+sudo ninja install
+```
 2. Prepare your images in a folder (around 20 to 30 for forward facing, and 40 to 50 for 360 inward-facing)
 3. Clone [LLFF](https://github.com/Fyusion/LLFF) and run `python img2poses.py $your-images-folder`
 4. Train the model using the same command as in [LLFF](#llff). If the scene is captured in a 360 inward-facing manner, add `--spheric` argument.
