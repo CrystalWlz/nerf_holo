@@ -1,14 +1,23 @@
 # NeRF_Holo
 * NeRF+Hololens
 
+## Hardware
+
+* Prosessor 12th Gen Intel® Core™ i5-12400F × 12
+* Graphics NVIDIA Corporation GA104 [GeForce RTX 3070] 8GB
+
 ## Software
 
+### Ubuntu 22.04
+* Nvidia Driver Version: 515
+* CUDA 11.2
 * Clone this repo by `git clone --recursive https://github.com/CrystalWlz/nerf_holo`
 * Python>=3.6 (installation via [anaconda](https://www.anaconda.com/distribution/) is recommended, use `conda create -n nerf_holo python=3.6` to create a conda environment and activate it by `conda activate nerf_pl`)
 * Python libraries
     * Install core requirements by `pip install -r requirements.txt`
-    * Install `torchsearchsorted` by `cd torchsearchsorted` then `sudo /home/wlz/anaconda3/envs/nerf_holo/bin/python -m pip install .`
-    * sodo is followed by `whereis python`
+    * Install `torchsearchsorted` by `cd torchsearchsorted` 
+    * then `sudo /home/wlz/anaconda3/envs/nerf_holo/bin/python -m pip install .`
+      * (sodo is followed by `whereis python`)
     
 # :key: Training
 
@@ -129,7 +138,7 @@ python train.py \
    --root_dir test2 \
    --N_importance 64 --img_wh 800 800 \
    --num_epochs 30 --batch_size 2048 \
-   --optimizer adam --lr 10e-4 \
+   --optimizer adam --lr 1e-3 \
    --lr_scheduler steplr --decay_step 10 20 --decay_gamma 0.5 \
    --exp_name exp \
    --spheric
