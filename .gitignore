@@ -5,6 +5,7 @@ ckpts/
 *.vol
 results/
 test2/
+test3/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

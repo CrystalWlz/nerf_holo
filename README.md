@@ -129,7 +129,7 @@ ninja
 sudo ninja install
 ```
 2. Prepare your images in a folder (around 20 to 30 for forward facing, and 40 to 50 for 360 inward-facing)
-3. Clone [LLFF](https://github.com/Fyusion/LLFF) and run `python img2poses.py $your-images-folder`
+3. Clone [LLFF](https://github.com/Fyusion/LLFF) and run `python imgs2poses.py $your-images-folder`
 4. Train the model using the same command as in [LLFF](#llff). If the scene is captured in a 360 inward-facing manner, add `--spheric` argument.
 (example)
 ```
