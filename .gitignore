@@ -2,6 +2,7 @@
 logs/
 ckpts/
 *.ply
+*.obj
 *.vol
 results/
 test2/
